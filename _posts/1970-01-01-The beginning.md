@@ -1,5 +1,6 @@
 ---
-title: "First post"
+layout: post
+title: First post
 ---
 
 Obviously, this is a test.
