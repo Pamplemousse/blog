@@ -10,22 +10,15 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
   </head>
   <body>
-    <section class="page-header">
+    <section class="page-header" onClick="window.location.href='{{ site.url }}';">
       <h1 class="project-name">{{ site.title | default: site.github.repository_name }}</h1>
       <h2 class="project-tagline">{{ site.description | default: site.github.project_tagline }}</h2>
     </section>
 
     <section class="main-content">
+      <h1>List of Tags</h1>
+
       {{ content }}
-
-      <hr>
-
-      {% include build_tags.html %}
-      <h4> Tags:
-        {% for tag in tags %}
-          <a href="{{ 'tags.html' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a>
-        {% endfor %}
-      </h4>
 
       {% include footer.html %}
     </section>

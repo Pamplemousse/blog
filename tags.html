@@ -1,0 +1,20 @@
+---
+layout: tags
+---
+
+{% include build_tags.html %}
+
+{% for tag in tags %}
+  <h2 id="{{ tag | slugify }}">{{ tag }}</h2>
+  <ul>
+    {% for post in site.posts %}
+      {% if post.tags contains tag %}
+        <li>
+          <h3>
+            <a href="{{ post.url }}"> {{ post.title }} </a> (<small>{{ post.date | date_to_string }}</small>)
+          </h3>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+{% endfor %}

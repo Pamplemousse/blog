@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Setup a dev environment to contribute to ZAP
+tags: [ development, ZAP ]
 ---
 
 ## Foreword
