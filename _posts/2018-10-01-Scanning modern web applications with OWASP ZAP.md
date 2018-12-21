@@ -40,8 +40,8 @@ This is even truer, especially with the rise of JavaScript framework such as [Re
 
 The problem is that it somewhat breaks the approach taken by ZAP: by only scanning HTTP responses, our favorite proxy statically analyze the transferred content, without taking into consideration the transformations that might happen when the browser will interpret the embedded JavaScript.
 
-For example, let's say that to detect XSS or SQLi, you have a script to detect `<input>` fields in a webpage.
-If the `<input>` is present in the HTML of the page, ZAP will be able to detect it.
+For example, let's say that to detect XSS or SQLi, you have a script to look for `<input>` fields in a webpage.
+If the `<input>` is present in the HTML of the page, ZAP will be able to find it.
 However, if there is a piece of JavaScript that modifies the DOM to add such an element, such as:
 ```javascript
 window.onload(function () {
