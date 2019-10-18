@@ -29,14 +29,13 @@ Among the bit that caused me much trouble:
 Miraculously, I discovered two blog posts that literally saved my day (or shall I say my week):
 
   * [NixOS on a Dell 9560](http://grahamc.com/blog/nixos-on-dell-9560) (by Graham Christensen)
-  * [Installing NixOS on a XPS 9560](https://jtanguy.cleverapps.io/installing-nixos-on-a-xps-9560/) (by Julien Tanguy)
+  * [Installing NixOS on a XPS 9560](https://jtanguy.me/blog/installing-nixos-on-a-xps-9560/) (by Julien Tanguy)
 
 Thus, this post stands on their shoulders and comes essentially as a wrap up of the work they have provided.
 
 
 ## Full disk encryption
 
-<!-- TODO -->
 > I don't think we can make these devices harder to lose; that's a human problem and not a technological one. But we can make the loss just cost money, not privacy.
 <sup id="a2">[2](#f2)</sup>
 
