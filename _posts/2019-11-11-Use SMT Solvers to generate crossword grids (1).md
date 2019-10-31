@@ -7,6 +7,7 @@ tags: [ development z3 ]
 This post is part of a (work in progress) series on using SMT Solvers to generate crossword grids.
 
   * Introduction to SMT, and programming with SMT Solvers (**currently reading**);
+  * <a href='/2019/11/12/Use-SMT-Solvers-to-generate-crossword-grids-(2).html' target='_blank'>Definitions and first formulas</a>;
 
 ---
 
