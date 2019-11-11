@@ -14,7 +14,7 @@ docker run --rm \
   -p 35729:35729 -p 4000:4000 \
   --env JEKYLL_ENV=development \
   -it jekyll/builder \
-  jekyll serve --drafts --livereload
+  jekyll serve --drafts --future --livereload
 ```
 
 Then visit [localhost:4000](http://localhost:4000/).
