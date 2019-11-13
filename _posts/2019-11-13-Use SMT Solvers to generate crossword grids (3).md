@@ -17,17 +17,17 @@ In the two previous posts, we covered how to represent:
   * The potential values they can have, taking their length into consideration;
   * And their "crossing points", *i.e.*, the characters some of them must have in common.
 
-We presented how the formulas derived from these representations are fed into a Solver, that would lead us to a valuation that we then "mapped back" into the grid to have it completed.
+We presented how the formulas derived from these representations are fed into a Solver, that would lead us to a set of values that we then "mapped back" into the grid to have it completed.
 
 Although the savant part of the job is done, a couple of points that are left to discuss to end the series:
   * Automate the formula generation, from potentially different grid frames;
-  * Measurements we made and results we had;
+  * Present measurements we made and results we had;
   * ~~Cry over the lack of efficiency~~ Discuss some potential improvements.
 
 
 # Formula generation
 
-In [the previous post](/2019/10/30/Use-SMT-Solvers-to-generate-crossword-grids-(2).html), we presented how to write formulas to encode crossword grids constraints.
+In [the previous post](/2019/11/12/Use-SMT-Solvers-to-generate-crossword-grids-(2).html), we presented how to write formulas to encode crossword grids constraints.
 
 So far, the process has been very manual: declaring a variable for each word, and explicitly adding the "intersection" constraint.
 One can easily see how this can become arduous as we will want to generate bigger grids.
@@ -42,7 +42,7 @@ Because we interact with Z3 using its Python API, it makes it easy for us to wri
 
 ## Variables
 
-Unlike in the previous post, where we had to deal with a small number of words to represent, we here expect to deal with a consequent number of variables.
+Unlike in the previous post, where we had to deal with a small number of words to represent, we expect here to deal with a consequent number of variables.
 
 Naming them $$ \text{horizontal} $$, or $$ \text{vertical} $$ would be very limiting; Still, using a naming scheme to help us locate words in the grid from the name of the variable use to represent them is an helpful idea.
 
@@ -92,10 +92,10 @@ Let's briefly present its content:
 
 # Results
 
-I ran the `solve.py` program on a Lenovo x220, with an Intel Core i5-2520M CPU (dual core, 2.50GHz base frequency), and 8Go of RAM, running on NixOS 20.03 <sup id="a1">[1](#f1)</sup>.
+I ran the `solve.py` program on a Lenovo x220, with an Intel Core i5-2520M CPU (dual core, 2.50GHz base frequency), and 8GB of RAM, running on NixOS 20.03 <sup id="a1">[1](#f1)</sup>.
 I used different parameters, varying the size of the grid and wordlists, at first to ensure that it worked as expected and produced valid solutions, then to measure its efficiency.
 
-The wordlists' sized has been reduced by shuffling the original (to keep a certain diversity among the options), then selecting only the firsts elements from it.
+The wordlists' sized has been reduced by shuffling the original (to keep a certain diversity among the options), then selecting only the first elements from it.
 I took three different grid sizes: small, medium, and large (respectively 6x3, 12x6, and 17x12); With the two smallest truncated from [the original 17x12 frame](http://frv100.com/fleches/mf001.htm).
 
 Here are the results obtained with our solution, implemented with the code presented earlier:
@@ -108,7 +108,7 @@ Here are the results obtained with our solution, implemented with the code prese
   * ~~ On a 17x12 grid, with complete wordlists ...~~
 
 Generation is working fairly quickly on small grids, using a reduced number of words to pick from.
-However, although the production of the formula increases linearly (in the size of the grid, and number of words per wordlists), the times it takes for the Solver to solve a given query grows at least quadratically (if not exponentially).
+However, although the production of the formula increases linearly (in the size of the grid, and number of words per wordlists), the time it takes for the Solver to solve a given query grows at least quadratically (if not exponentially).
 
 In the end, I did not get the patience to run the experiment for the targeted 17x12 grid.
 
