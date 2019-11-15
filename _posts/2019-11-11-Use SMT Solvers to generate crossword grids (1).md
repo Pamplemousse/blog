@@ -10,6 +10,8 @@ This post is part of a series on using SMT Solvers to generate crossword grids.
   * <a href='/2019/11/12/Use-SMT-Solvers-to-generate-crossword-grids-(2).html' target='_blank'>Definitions and first formulas</a>;
   * <a href='/2019/11/13/Use-SMT-Solvers-to-generate-crossword-grids-(3).html' target='_blank'>Plumbing everything together, complete formula, and results</a>.
 
+Thanks [@geistindersh](https://twitter.com/geistindersh) for his feedback, and corrections!
+
 ---
 
 SMT solvers are tools that are used in several fields. By modeling complex problems into logical formulas, and then leveraging the power of a Solver hoping to find values satisfying these formulas, it is possible to obtain solutions for the targeted problems.

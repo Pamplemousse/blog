@@ -10,6 +10,8 @@ This post is part of a series on using SMT Solvers to generate crossword grids.
   * Definitions and first formulas (**currently reading**);
   * <a href='/2019/11/13/Use-SMT-Solvers-to-generate-crossword-grids-(3).html' target='_blank'>Plumbing everything together, complete formula, and results</a>.
 
+Thanks [@geistindersh](https://twitter.com/geistindersh) for his feedback, and corrections!
+
 ---
 
 In a previous blog post we presented SMT Solvers, and mentioned that we can use them to solve problems;
