@@ -6,7 +6,7 @@ tags: [ development, javascript, ZAP ]
 
 During the summer of 2018, I was an intern in the [FoxSec](https://wiki.mozilla.org/Security/FirefoxOperations) team at Mozilla, where I contributed to [ZAP (for Zed Attack proxy)](https://www.zaproxy.org/), an open-source web application security scanner.
 
-The subject of my internship was **Scanning modern web applications with OWASP ZAP**, and the report I wrote about it is available online at <a href='http://xaviermaso.com/internship_report_2018.pdf' target='_blank'>xaviermaso.com/internship_report_2018.pdf</a> .
+The subject of my internship was **Scanning modern web applications with OWASP ZAP**, and the report I wrote about it is available online at <a href='https://www.xaviermaso.com/internship_report_2018.pdf' target='_blank'>xaviermaso.com/internship_report_2018.pdf</a> .
 
 I do not intend to delve too much into the details of what have been implemented in this post, especially because the report should contain all the informations needed for whom is interested by the subject.
 
@@ -139,7 +139,7 @@ On the other hand, the front-end-tracker is already published on npm, but could 
 
 Unfortunately, as I am back to university, I do not have much time to invest on this, and as the ZAP core team members have already an awful lot of things to deal with, it does not seem that these features will be brought to ZAP users in a near future.
 
-If you are interested to help and contribute, you can take a look at the <a href='https://github.com/zaproxy/zaproxy/issues?q=is%3Aissue+is%3Aopen+FrontEndScanner' target='_blank'>related issues opened on GitHub</a>, or come talk to the (very welcoming) team members on `irc.mozilla.org`, in channel `#websectools`.
+If you are interested to help and contribute, you can take a look at the <a href='https://github.com/zaproxy/zaproxy/issues?q=is%3Aissue+is%3Aopen+FrontEndScanner' target='_blank'>related issues opened on GitHub</a>, or come talk to the (very welcoming) team members on `irc.freenode.net`, in channel `#zaproxy`.
 
 **I am always happy to receive constructive feedback, so do not hesitate to ping me, on twitter <a href='https://twitter.com/Pamplemouss_' target='_blank'>@pamplemouss_</a> or elsewhere.**
 
@@ -148,4 +148,4 @@ If you are interested to help and contribute, you can take a look at the <a href
 
 <b id="f2">2</b> The complete list of events to track: <a href='https://github.com/zaproxy/front-end-tracker/blob/master/src/events.js' target='blank'>https://github.com/zaproxy/front-end-tracker/blob/master/src/events.js</a> . [↩](#a2)
 
-<b id="f3">3</b> This "scan-jwt-tokens" script is installed with the FrontEndScanner add-on, and thus available as an example for ZAP users. Here is what it looks like: <a href='https://github.com/zaproxy/zap-extensions/blob/master/src/org/zaproxy/zap/extension/frontendscanner/files/scripts/scripts/client-side-passive/scan-jwt-tokens.js' target='blank'>https://github.com/zaproxy/zap-extensions/blob/master/src/org/zaproxy/zap/extension/frontendscanner/files/scripts/scripts/client-side-passive/scan-jwt-tokens.js</a> . [↩](#a2)
+<b id="f3">3</b> This "scan-jwt-tokens" script is installed with the FrontEndScanner add-on, and thus available as an example for ZAP users. Here is what it looks like: <a href='https://github.com/zaproxy/zap-extensions/blob/master/addOns/frontendscanner/src/main/zapHomeFiles/scripts/scripts/client-side-passive/scan-jwt-tokens.js' target='blank'>https://github.com/zaproxy/zap-extensions/blob/master/addOns/frontendscanner/src/main/zapHomeFiles/scripts/scripts/client-side-passive/scan-jwt-tokens.js[↩](#a3)
