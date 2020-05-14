@@ -1,3 +1,4 @@
+author: Pamplemousse
 name: pamplemousse's blog
 title: pamplemousse's blog
 description: Some thoughts and writings related to projects I work on.
@@ -5,4 +6,5 @@ theme: jekyll-theme-cayman
 repository: pamplemousse/blog
 markdown: kramdown
 plugins:
+    - jekyll-feed
     - jekyll-sitemap
