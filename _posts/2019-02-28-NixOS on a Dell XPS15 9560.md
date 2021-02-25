@@ -22,7 +22,7 @@ One day, I received a Dell XPS15 9560 which I needed to setup, thus I wanted to 
 It was painful ; but I realized I was not the only one running into trouble installing Linux on this machine: [see this comparative result on the installation of several distributions](https://medium.com/@kemra102/linux-on-the-dell-xps-15-919e6d472aa3).
 
 Among the bit that caused me much trouble:
-  * Move from `MBR/BIOS` to `GPT/UEFI`<sup id="a1">[1](#f1)</sup>;
+  * Move from `MBR/BIOS` to `GPT/UEFI` [^1];
   * LUKS encryption;
   * Machine freezing, very likely due to the [nouveau](https://nouveau.freedesktop.org/wiki/), and [bbswitch](https://github.com/Bumblebee-Project/bbswitch) modules for Nvidia graphic card.
 
@@ -37,7 +37,7 @@ Thus, this post stands on their shoulders and comes essentially as a wrap up of 
 ## Full disk encryption
 
 > I don't think we can make these devices harder to lose; that's a human problem and not a technological one. But we can make the loss just cost money, not privacy.
-<sup id="a2">[2](#f2)</sup>
+[^2]
 
 Solution: use [Luks](https://guardianproject.info/code/luks/) to encrypt partitions ; Here is what the partitioning looks like.
 
@@ -67,8 +67,7 @@ One solution is to create a random passphrase (not meant to be remembered by you
 
 #### Here is how we proceeded:
 
-*Note that some space is left at the beginning of the disk for the GPT to take place.*<sup id="a3">[3](#f3)</sup>
-
+*Note that some space is left at the beginning of the disk for the GPT to take place.* [^3]
 ```bash
 # partitioning
 DISK=/dev/sda
@@ -179,8 +178,8 @@ Some areas of improvements that are worth mentioning:
 **Aside from that, I am happy now that my laptop is functional! (Pun intended.)**
 
 ---
-<b id="f1">1</b> MBR, BIOS, GPT, UEFI definitions: <a href='https://wiki.manjaro.org/index.php?title=Some_basics_of_MBR_v/s_GPT_and_BIOS_v/s_UEFI' target='blank'>https://wiki.manjaro.org/index.php?title=Some_basics_of_MBR_v/s_GPT_and_BIOS_v/s_UEFI</a> . [↩](#a1)
+[^1]: MBR, BIOS, GPT, UEFI definitions: <a href='https://wiki.manjaro.org/index.php?title=Some_basics_of_MBR_v/s_GPT_and_BIOS_v/s_UEFI' target='blank'>https://wiki.manjaro.org/index.php?title=Some_basics_of_MBR_v/s_GPT_and_BIOS_v/s_UEFI</a> .
 
-<b id="f2">2</b> Source: <a href='https://www.wired.com/2006/01/big-risks-come-in-small-packages/' target='blank'>https://www.wired.com/2006/01/big-risks-come-in-small-packages/</a> . [↩](#a2)
+[^2]: Source: <a href='https://www.wired.com/2006/01/big-risks-come-in-small-packages/' target='blank'>https://www.wired.com/2006/01/big-risks-come-in-small-packages/</a> .
 
-<b id="f3">3</b> GUID Partition Table: <a href='https://en.wikipedia.org/wiki/GUID_Partition_Table' target='blank'>https://en.wikipedia.org/wiki/GUID_Partition_Table</a> . [↩](#a3)
+[^3]: GUID Partition Table: <a href='https://en.wikipedia.org/wiki/GUID_Partition_Table' target='blank'>https://en.wikipedia.org/wiki/GUID_Partition_Table</a> .

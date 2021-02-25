@@ -7,7 +7,7 @@ tags: [ angr, development, binary analysis ]
 On the research project I work on at [SEFCOM](https://sefcom.asu.edu/), I use [`angr`](https://angr.io/) to statically analyse binary programs.
 
 Incidentally, I was invited to give a presentation as part of [CSE545](https://cse545.tiffanybao.com/) during the Fall semester of 2020 at [ASU](https://www.asu.edu/).
-This talk was meant to be a hands-on introduction on data-flow analysis, using [`angr`](https://angr.io/), to find "taint-style" vulnerabilities <sup id="a1">[1](#f1)</sup> in binaries.
+This talk was meant to be a hands-on introduction on data-flow analysis, using [`angr`](https://angr.io/), to find "taint-style" vulnerabilities [^1] in binaries.
 Thanks to the one of the class's TA, the [video recording](https://www.youtube.com/watch?v=4SMRnpuqN6E&start=490) is available.
 Furthermore, I published [the slides of the presentation](https://docs.google.com/presentation/d/13SDNRKHblo2xenczp9m6rQahigtwygmUcrBhZ-G3gvo), as well as [the illustrating code examples](https://github.com/Pamplemousse/bits_of_static_binary_analysis/).
 
@@ -34,7 +34,7 @@ If you already know what "function handler" means, you can skip the [Context](#c
 # Context
 
 At a high level, we can use a static analysis to gather data-flow facts about the variables of programs without executing them.
-To do so, such analysis somewhat sequentially interprets the effects of program's statements on the state it keeps track of <sup id="a2">[2](#f2)</sup>.
+To do so, such analysis somewhat sequentially interprets the effects of program's statements on the state it keeps track of [^2].
 
 #### But what if such a statement is a function call?
 
@@ -80,7 +80,7 @@ As you can see in [the documentation of `FunctionHandler`](https://angr.io/api-d
 Those are the minimal requirements for a `function_handler` to have.
 
 Then, for `ReachingDefinitionsAnalysis` to be able to deal with say `printf`, `malloc`, or `strcpy`, we would add the corresponding methods: `handle_printf`, `handle_malloc`, and `handle_strcpy` to the concrete class inheriting from `FunctionHandler`.
-For example, such a concrete class `MyHandlers`, would produce instances exposing `handle_printf`, that will be called during the analysis when a call to `printf` is encountered in the binary (and respectively `handle_malloc`, `handle_strcpy` for calls to `malloc`, `strcpy`) <sup id="a3">[3](#f3)</sup>.
+For example, such a concrete class `MyHandlers`, would produce instances exposing `handle_printf`, that will be called during the analysis when a call to `printf` is encountered in the binary (and respectively `handle_malloc`, `handle_strcpy` for calls to `malloc`, `strcpy`) [^3].
 
 **To recap**, and because the terminology is somewhat confusing:
   * A "function handler" is a (Python) method that will be called by the analysis when encountering a `call` instruction;
@@ -265,8 +265,8 @@ By applying the same principle on local functions, they even bring us one step b
 **Hoping you found those examples enlightening, happy hacking!**
 
 ---
-<b id="f1">1</b> By "tainting" a variable taking a value from a user input, and propagating this taint on use, one can find other variables that can be influenced by a user input. Tainted variables being used for sensitive operations (arguments to `execve`, or `system`, affectation to a buffer of fixed size, etc.) points to potential security vulnerabilities. [↩](#a1)
+[^1]: By "tainting" a variable taking a value from a user input, and propagating this taint on use, one can find other variables that can be influenced by a user input. Tainted variables being used for sensitive operations (arguments to `execve`, or `system`, affectation to a buffer of fixed size, etc.) points to potential security vulnerabilities.
 
-<b id="f2">2</b> If you want to learn more details about how the analysis works, and a more concrete example of such analysis, I strongly encourage you to go look at the presentation mentioned above, [available on YouTube](https://www.youtube.com/watch?v=4SMRnpuqN6E). [↩](#a2)
+[^2]: If you want to learn more details about how the analysis works, and a more concrete example of such analysis, I strongly encourage you to go look at the presentation mentioned above, [available on YouTube](https://www.youtube.com/watch?v=4SMRnpuqN6E).
 
-<b id="f3">3</b> For those interested in the underlying mechanics on the `angr` side of things, the handler's instance method is called in [angr/analyses/reaching_definitions/engine_vex.py](https://github.com/angr/angr/blob/0558f5758814cf3f17912b0621f4adb8d0f92240/angr/analyses/reaching_definitions/engine_vex.py#L588-L591). [↩](#a3)
+[^3]: For those interested in the underlying mechanics on the `angr` side of things, the handler's instance method is called in [angr/analyses/reaching_definitions/engine_vex.py](https://github.com/angr/angr/blob/0558f5758814cf3f17912b0621f4adb8d0f92240/angr/analyses/reaching_definitions/engine_vex.py#L588-L591).

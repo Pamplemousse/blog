@@ -94,7 +94,7 @@ Let's briefly present its content:
 
 # Results
 
-I ran the `solve.py` program on a Lenovo x220, with an Intel Core i5-2520M CPU (dual core, 2.50GHz base frequency), and 8GB of RAM, running on NixOS 20.03 <sup id="a1">[1](#f1)</sup>.
+I ran the `solve.py` program on a Lenovo x220, with an Intel Core i5-2520M CPU (dual core, 2.50GHz base frequency), and 8GB of RAM, running on NixOS 20.03 [^1].
 I used different parameters, varying the size of the grid and wordlists, at first to ensure that it worked as expected and produced valid solutions, then to measure its efficiency.
 
 The wordlists' sized has been reduced by shuffling the original (to keep a certain diversity among the options), then selecting only the first elements from it.
@@ -140,4 +140,4 @@ In particular, we discussed in details how we can model (encode) crossword grids
 **Hope you found this journey very cool; At least it was from my side.**
 
 ---
-<b id="f1">1</b> Clearly, this setup is rubbish from the computing power perspective, considering the task at hand. But that's my laptop, and I love it. [↩](#a1)
+[^1]: Clearly, this setup is rubbish from the computing power perspective, considering the task at hand. But that's my laptop, and I love it.

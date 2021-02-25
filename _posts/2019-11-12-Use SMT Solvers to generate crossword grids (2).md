@@ -77,7 +77,7 @@ Then adding definitions is relatively straightforward, using a mapping of words 
 Now that we specified what we talk about, let's write some formulas;
 Gradually, from simple to complex.
 
-As we mentioned earlier, we will use [Z3](https://github.com/Z3Prover/z3), because it supports a String theory <sup id="a1">[1](#f1)</sup>.
+As we mentioned earlier, we will use [Z3](https://github.com/Z3Prover/z3), because it supports a String theory [^1].
 Furthermore, we will make use of the Python bindings for Z3, to make the code friendly to beginners' eyes.
 
 
@@ -117,7 +117,7 @@ There is something that we already know about $$ horizontal $$ that we do not ne
 Indeed, we know from the grid that $$ horizontal $$ should be of length 4, hence, we don't need to pass the Solver anything that involves words of size different than that.
 
 In practice, instead of having a single wordlist, we use many: each one of them referencing only words of the same size.
-At most, that means we have 36 wordlists for the French language <sup id="a2">[2](#f2)</sup>.
+At most, that means we have 36 wordlists for the French language [^2].
 
 And so, asking a Solver:
 
@@ -237,6 +237,6 @@ Boom, we now have everything we need to represent complete crossword grids!
 **In the next (and last) blog post, we will present the complete formula we build, and the results we obtain trying to generate grids this way.**
 
 ---
-<b id="f1">1</b> Under this theory, variables take their values among all the possible sequences of characters, and operations can be substring comparison, concatenation, etc. [↩](#a1)
+[^1]: Under this theory, variables take their values among all the possible sequences of characters, and operations can be substring comparison, concatenation, etc.
 
-<b id="f2">2</b> According to <a href='https://en.wikipedia.org/wiki/Longest_word_in_French' target='blank'>the relevant Wikipedia page</a>, the longest French word is "hippopotomonstrosesquippedaliophobie", counting 36 letters! [↩](#a2)
+[^2]: According to <a href='https://en.wikipedia.org/wiki/Longest_word_in_French' target='blank'>the relevant Wikipedia page</a>, the longest French word is "hippopotomonstrosesquippedaliophobie", counting 36 letters!

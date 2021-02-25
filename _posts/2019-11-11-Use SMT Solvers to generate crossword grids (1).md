@@ -16,7 +16,7 @@ Thanks [@geistindersh](https://twitter.com/geistindersh) for his feedback, and c
 
 SMT solvers are tools that are used in several fields. By modeling complex problems into logical formulas, and then leveraging the power of a Solver hoping to find values satisfying these formulas, it is possible to obtain solutions for the targeted problems.
 
-When I first encountered this approach in a class on program analysis <sup id="a1">[1](#f1)</sup>, the whole concept of encoding problems with mathematics was not very straightforward, and required a bit of mental gymnastics.
+When I first encountered this approach in a class on program analysis [^1], the whole concept of encoding problems with mathematics was not very straightforward, and required a bit of mental gymnastics.
 
 However, after some practice, I became more accustomed to this idea, and recently had the opportunity to exercise and study these approaches more in depth.
 Now that it feels familiar, I believe it's the perfect time to write what I wish I could have read earlier.
@@ -31,10 +31,10 @@ Hence, in the following blog posts, we will explore the use of SMT Solvers in a 
 What is SMT by the way?
 
 > SMT problem is a decision problem for logical formulas with respect to combinations of background theories
-<sup id="a2">[2](#f2)</sup>
+[^2]
 
 Huh? Let's break that down:
-  * A **decision problem** is a question that can be answered by `Yes`, `No`, or `Don't Know` <sup id="a3">[3](#f3)</sup>;
+  * A **decision problem** is a question that can be answered by `Yes`, `No`, or `Don't Know` [^3];
   * **Logical formulas** are "mathematical" formulas using variables and operations; Such formulas can be evaluated to `True`, or `False` (depending on the values that the variables take, and the considered operations);
   * **Background theories** can be thought as the "universe in which our formula lives". Some examples:
       - Booleans: variables can take the values `True` or `False`, and operations being $$ \land, \lor, \lnot $$ (respectively logical and, or, not) ...
@@ -53,7 +53,7 @@ SMT Solvers (also known as constraints Solvers, or theorem Provers) are computer
   * **`UNSAT`**isfiable, if there are no values for which the formula is `True`; In other terms, the formula will always evaluate to `False` no matter how hard we try;
   * **`Don't Know`**, if the Solver did not manage to give one of the previous result under a specific time bound.
 
-We will assimilate SMT Solvers as magical <sup id="a4">[4](#f4)</sup> black boxes, their inner working remaining mysterious.
+We will assimilate SMT Solvers as magical [^4] black boxes, their inner working remaining mysterious.
 We can feed formulas to them, and expect one of the above response.
 
 $$
@@ -123,10 +123,10 @@ We can use them to avoid dealing with tedious logic and building complicated alg
 **In the next blog post, we are going to explicit how we model the crossword grids, to get a Solver to help generate them.**
 
 ---
-<b id="f1">1</b> <a href='https://www.u-bordeaux.fr/formation/2018/PRMA_68/informatique/enseignement/FRUAI0333298FCOEN_7296/verification-de-logiciels' target='blank'>Software Verification</a>, of the <a href='https://mastercsi.labri.fr/' target='blank'>CSI Masters</a>. [↩](#a1)
+[^1]: <a href='https://www.u-bordeaux.fr/formation/2018/PRMA_68/informatique/enseignement/FRUAI0333298FCOEN_7296/verification-de-logiciels' target='blank'>Software Verification</a>, of the <a href='https://mastercsi.labri.fr/' target='blank'>CSI Masters</a> .
 
-<b id="f2">2</b> Source: <a href='https://en.wikipedia.org/wiki/Satisfiability_Modulo_Theories' target='blank'>https://en.wikipedia.org/wiki/Satisfiability_Modulo_Theories</a>. [↩](#a2)
+[^2]: Source: <a href='https://en.wikipedia.org/wiki/Satisfiability_Modulo_Theories' target='blank'>https://en.wikipedia.org/wiki/Satisfiability_Modulo_Theories</a> .
 
-<b id="f3">3</b> One of the biggest upset in Computer Science is that not all problems can be "solved" by algorithms: <a href="https://en.wikipedia.org/wiki/Undecidable_problem" target="blank">https://en.wikipedia.org/wiki/Undecidable_problem</a> , but we don't know which ones for sure. [↩](#a3)
+[^3]: One of the biggest upset in Computer Science is that not all problems can be "solved" by algorithms: <a href="https://en.wikipedia.org/wiki/Undecidable_problem" target="blank">https://en.wikipedia.org/wiki/Undecidable_problem</a> , but we don't know which ones for sure.
 
-<b id="f4">4</b> Because their implementation is way out of the scope of this post, it can be easier to imagine them as transcendental entities, or at least being beyond our comprehension. [↩](#a4)
+[^4]: Because their implementation is way out of the scope of this post, it can be easier to imagine them as transcendental entities, or at least being beyond our comprehension.

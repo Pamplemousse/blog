@@ -62,7 +62,7 @@ To answer this problematic, we broke our solution down into two "components":
 ## The FrontEndScanner
 
 > Add-ons add additional functionality to ZAP. They have full access to all of the ZAP internals, and so can provide very powerful new features.
-<sup id="a1">[1](#f1)</sup>
+[^1]
 
 We wrote the FrontEndScanner add-on to provide a way for ZAP users to look for front-end vulnerabilities by executing scripts where they can make sense out of the dynamic nature of JavaScript: in the web browser, alongside the application that is being tested.
 
@@ -107,7 +107,7 @@ Storage.prototype.getItem = function (...args) {
 
 We call such a mechanism a "hook", as it hooks a custom function to a standard behavior.
 So far, the following hooks have been implemented:
-  * [DOM events](https://developer.mozilla.org/en-US/docs/Web/Events): catch when a user interacts with a webpage (by clicking, scrolling, hovering, or else), when resources are loaded, etc.<sup id="a2">[2](#f2)</sup>,
+  * [DOM events](https://developer.mozilla.org/en-US/docs/Web/Events): catch when a user interacts with a webpage (by clicking, scrolling, hovering, or else), when resources are loaded, etc. [^2],
   * [Storage](https://developer.mozilla.org/en-US/docs/Web/API/Storage): catch when values in the storages in the browser are read, written or removed
 
 If the front-end-tracker ever runs after one of this behavior get triggered in the page, this one would not be reported.
@@ -130,8 +130,7 @@ That is why it has been released on [npm](https://npmjs.com) under <a href='http
 
 After these twelve weeks of internship, we ended up having an interesting proof-of-concept of our approach and tools for scanning modern web applications.
 
-Not only we implemented the basics FrontEndScanner add-on and the front-end-tracker it relies on, but we wrote the very first client-side passive script to detect when JWT tokens are written in an application.
-<sup id="a3">[3](#f3)</sup>
+Not only we implemented the basics FrontEndScanner add-on and the front-end-tracker it relies on, but we wrote the very first client-side passive script to detect when JWT tokens are written in an application [^3].
 
 Unfortunately, all the work presented here has not yet been released: indeed, the FrontEndScanner still lacks features and documentation to be made available on ZAP's marketplace: see <a href='https://github.com/zaproxy/zaproxy/issues/4939' target='_blank'>issue #4939</a> for more details.
 
@@ -144,8 +143,8 @@ If you are interested to help and contribute, you can take a look at the <a href
 **I am always happy to receive constructive feedback, so do not hesitate to ping me, on twitter <a href='https://twitter.com/Pamplemouss_' target='_blank'>@pamplemouss_</a> or elsewhere.**
 
 ---
-<b id="f1">1</b> Source: <a href='https://github.com/zaproxy/zap-core-help/wiki/HelpStartConceptsAddons' target='blank'>https://github.com/zaproxy/zap-core-help/wiki/HelpStartConceptsAddons</a> . [↩](#a1)
+[^1]: Source: <a href='https://github.com/zaproxy/zap-core-help/wiki/HelpStartConceptsAddons' target='blank'>https://github.com/zaproxy/zap-core-help/wiki/HelpStartConceptsAddons</a> .
 
-<b id="f2">2</b> The complete list of events to track: <a href='https://github.com/zaproxy/front-end-tracker/blob/master/src/events.js' target='blank'>https://github.com/zaproxy/front-end-tracker/blob/master/src/events.js</a> . [↩](#a2)
+[^2]: The complete list of events to track: <a href='https://github.com/zaproxy/front-end-tracker/blob/master/src/events.js' target='blank'>https://github.com/zaproxy/front-end-tracker/blob/master/src/events.js</a> .
 
-<b id="f3">3</b> This "scan-jwt-tokens" script is installed with the FrontEndScanner add-on, and thus available as an example for ZAP users. Here is what it looks like: <a href='https://github.com/zaproxy/zap-extensions/blob/master/addOns/frontendscanner/src/main/zapHomeFiles/scripts/scripts/client-side-passive/scan-jwt-tokens.js' target='blank'>https://github.com/zaproxy/zap-extensions/blob/master/addOns/frontendscanner/src/main/zapHomeFiles/scripts/scripts/client-side-passive/scan-jwt-tokens.js[↩](#a3)
+[^3]: This "scan-jwt-tokens" script is installed with the FrontEndScanner add-on, and thus available as an example for ZAP users. Here is what it looks like: <a href='https://github.com/zaproxy/zap-extensions/blob/master/addOns/frontendscanner/src/main/zapHomeFiles/scripts/scripts/client-side-passive/scan-jwt-tokens.js' target='blank'>https://github.com/zaproxy/zap-extensions/blob/master/addOns/frontendscanner/src/main/zapHomeFiles/scripts/scripts/client-side-passive/scan-jwt-tokens.js</a>
