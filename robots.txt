@@ -1,0 +1,4 @@
+Sitemap: https://blog.xaviermaso.com/sitemap.xml
+
+User-agent: GPTBot
+Disallow: /
