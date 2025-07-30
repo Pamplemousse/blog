@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Use SMT Solvers to generate crossword grids (2)
-tags: [ development z3 ]
+tags: [ development, z3 ]
 ---
 
 This post is part of a series on using SMT Solvers to generate crossword grids.
