@@ -80,7 +80,7 @@ From this representation, a complete formula can be generated (the different var
 
 ## Stop waving your hands. Where is the code?
 
-The complete code is available in [a GitHub repository](https://github.com/Pamplemousse/SMT-solver-playground/crosswords), and too long to completely expose here.
+The complete code is available in [a Git repository](https://git.xaviermaso.com/nodes/git.xaviermaso.com/SMT-prolem-playground/tree/crosswords/README.md), and too long to completely expose here.
 Don't let the amount of files intimidate you, the principles exposed in this series are the one implemented.
 Let's briefly present its content:
 
